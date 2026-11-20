@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+<!-- AGENT-MEMORY:BEGIN -->
+- Knowledge Explorer answers are static data in `src/lib/meridian-data.ts` matched by keyword; UI pieces live in `src/components/meridian/`. Why: no backend is connected yet.
+<!-- AGENT-MEMORY:END -->
