@@ -8,7 +8,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Meridian CI design system — muted slate/teal-grey enterprise look. */
+/* Meridian CI design system — pale blue/slate enterprise look (theme_new.png). */
 
 @theme inline {
   --font-sans: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
@@ -47,7 +47,18 @@
   --color-ink-soft: var(--ink-soft);
   --color-icon-bubble: var(--icon-bubble);
   --color-icon-ink: var(--icon-ink);
+  --color-icon-blue: var(--icon-blue);
+  --color-icon-blue-ink: var(--icon-blue-ink);
+  --color-icon-cyan: var(--icon-cyan);
+  --color-icon-cyan-ink: var(--icon-cyan-ink);
+  --color-icon-mint: var(--icon-mint);
+  --color-icon-mint-ink: var(--icon-mint-ink);
+  --color-icon-amber: var(--icon-amber);
+  --color-icon-amber-ink: var(--icon-amber-ink);
+  --color-icon-red: var(--icon-red);
+  --color-icon-red-ink: var(--icon-red-ink);
   --color-nav-active: var(--nav-active);
+  --color-nav-ink: var(--nav-ink);
   --color-ask: var(--ask);
   --color-ask-hover: var(--ask-hover);
   --color-ask-foreground: var(--ask-foreground);
@@ -61,6 +72,8 @@
   --color-evidence-foreground: var(--evidence-foreground);
   --color-badge: var(--badge);
   --color-badge-foreground: var(--badge-foreground);
+  --color-badge-blue: var(--badge-blue);
+  --color-badge-blue-foreground: var(--badge-blue-foreground);
   --color-badge-quiet: var(--badge-quiet);
   --color-badge-quiet-foreground: var(--badge-quiet-foreground);
   --color-scroll-thumb: var(--scroll-thumb);
@@ -69,53 +82,66 @@
 :root {
   --radius: 0.5rem;
 
-  --background: oklch(0.935 0.004 197);
-  --foreground: oklch(0.27 0.018 225);
-  --card: oklch(0.955 0.003 197);
-  --card-foreground: oklch(0.27 0.018 225);
-  --popover: oklch(0.97 0.003 197);
-  --popover-foreground: oklch(0.27 0.018 225);
-  --primary: oklch(0.47 0.045 245);
-  --primary-foreground: oklch(0.97 0.004 240);
-  --secondary: oklch(0.905 0.008 200);
-  --secondary-foreground: oklch(0.3 0.02 225);
-  --muted: oklch(0.915 0.006 200);
-  --muted-foreground: oklch(0.5 0.015 220);
-  --accent: oklch(0.895 0.012 200);
-  --accent-foreground: oklch(0.3 0.03 225);
-  --destructive: oklch(0.577 0.2 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.875 0.006 200);
-  --input: oklch(0.865 0.006 200);
-  --ring: oklch(0.6 0.04 230);
+  --background: #f0f4f9;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #1b5e57;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #334155;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --accent: #eef4fb;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #2563eb;
 
-  --brand: oklch(0.25 0.008 230);
-  --brand-foreground: oklch(0.97 0 0);
-  --ink: oklch(0.24 0.02 225);
-  --ink-soft: oklch(0.42 0.025 220);
-  --icon-bubble: oklch(0.885 0.012 195);
-  --icon-ink: oklch(0.34 0.04 215);
-  --nav-active: oklch(0.885 0.012 195);
-  --ask: oklch(0.47 0.045 245);
-  --ask-hover: oklch(0.41 0.05 245);
-  --ask-foreground: oklch(0.97 0.004 240);
-  --panel: oklch(0.965 0.003 197);
-  --panel-border: oklch(0.86 0.007 200);
-  --summary-rule: oklch(0.34 0.04 245);
-  --detail-rule: oklch(0.5 0.07 180);
-  --detail-label: oklch(0.45 0.07 180);
-  --evidence: oklch(0.43 0.06 200);
-  --evidence-hover: oklch(0.37 0.065 200);
-  --evidence-foreground: oklch(0.97 0.004 200);
-  --badge: oklch(0.89 0.018 230);
-  --badge-foreground: oklch(0.35 0.05 245);
-  --badge-quiet: oklch(0.91 0.005 210);
-  --badge-quiet-foreground: oklch(0.48 0.015 220);
-  --scroll-thumb: oklch(0.83 0.01 210);
+  --brand: #1e293b;
+  --brand-foreground: #ffffff;
+  --ink: #0f172a;
+  --ink-soft: #475569;
+  --icon-bubble: #ede9fe;
+  --icon-ink: #4f46e5;
+  --icon-blue: #dbeafe;
+  --icon-blue-ink: #1d4ed8;
+  --icon-cyan: #e0f2fe;
+  --icon-cyan-ink: #0284c7;
+  --icon-mint: #d1fae5;
+  --icon-mint-ink: #059669;
+  --icon-amber: #fef3c7;
+  --icon-amber-ink: #b45309;
+  --icon-red: #fee2e2;
+  --icon-red-ink: #dc2626;
+  --nav-active: #dbeafe;
+  --nav-ink: #1e40af;
+  --ask: #1b5e57;
+  --ask-hover: #174e48;
+  --ask-foreground: #ffffff;
+  --panel: #ffffff;
+  --panel-border: #e2e8f0;
+  --summary-rule: #4f46e5;
+  --detail-rule: #1b5e57;
+  --detail-label: #475569;
+  --evidence: #1b5e57;
+  --evidence-hover: #174e48;
+  --evidence-foreground: #ffffff;
+  --badge: #e0e7ff;
+  --badge-foreground: #3730a3;
+  --badge-blue: #dbeafe;
+  --badge-blue-foreground: #1e40af;
+  --badge-quiet: #f1f5f9;
+  --badge-quiet-foreground: #475569;
+  --scroll-thumb: #cbd5e1;
 
-  --shadow-card: 0 1px 2px oklch(0.3 0.02 220 / 0.06);
-  --shadow-card-selected: 0 2px 6px oklch(0.3 0.02 220 / 0.18), 0 0 0 1px oklch(0.55 0.02 220 / 0.35);
-  --shadow-panel: 0 1px 3px oklch(0.3 0.02 220 / 0.07);
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.05);
+  --shadow-card-selected: 0 2px 8px rgb(15 23 42 / 0.1), 0 0 0 1px rgb(37 99 235 / 0.35);
+  --shadow-panel: 0 1px 3px rgb(15 23 42 / 0.06);
 }
 
 @layer base {

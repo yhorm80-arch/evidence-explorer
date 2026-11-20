@@ -67,55 +67,56 @@ function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="mx-auto max-w-[1880px] px-6 pb-16 md:px-12">
-        <div className="pt-5">
+      <main className="mx-auto max-w-[1880px] px-6 pb-12 md:px-10">
+        <div className="pt-4">
           <Breadcrumb />
         </div>
 
-        <p className="mt-12 text-[19px] font-semibold uppercase tracking-[0.18em] text-icon-ink">
-          Meridian Retail Banking <span className="mx-3">·</span> Legacy COBOL Platform
+        <p className="mt-6 text-[11px] font-bold uppercase tracking-[0.08em] text-icon-ink">
+          Meridian Retail Banking <span className="mx-2">·</span> Legacy COBOL Platform
         </p>
 
-        <p className="mt-24 text-[21px] text-ink">
-          Six Modules from IBM Mainframe Z/OS and DB2 from the <strong className="font-semibold">Retail Banking Core</strong>{" "}
-          are connected into one knowledge plane for further exploration
+        <p className="mt-3 max-w-[900px] text-[14px] leading-[1.4] text-ink-soft">
+          Six Modules from IBM Mainframe Z/OS and DB2 from the{" "}
+          <strong className="font-semibold text-ink">Retail Banking Core</strong> are connected into
+          one knowledge plane for further exploration
         </p>
 
-        <h2 className="mt-8 text-[24px] font-semibold text-ink">What's in scope</h2>
-        <div className="mt-5">
+        <h2 className="mt-7 text-[16px] font-bold text-ink">What's in scope</h2>
+        <div className="mt-3">
           <ScopeCards selected={selected} onSelect={setSelected} />
         </div>
 
-        <div className="mt-10 flex flex-wrap items-end justify-between gap-2">
-          <h2 className="text-[24px] font-semibold text-ink">Ask a question</h2>
-          <p className="text-[17px] text-ink-soft">
+        <div className="mt-7 flex flex-wrap items-end justify-between gap-2">
+          <h2 className="text-[16px] font-bold text-ink">Ask a question</h2>
+          <p className="text-[12px] text-ink-soft">
             Answers cover these six programs as analysed — not live production data.
           </p>
         </div>
 
         <form
           onSubmit={onSubmit}
-          className="mt-4 flex items-center gap-4 rounded-xl border border-input bg-card py-2 pl-8 pr-2 shadow-card"
+          className="mt-3 flex items-center gap-3 rounded-lg border border-input bg-card py-1.5 pl-4 pr-1.5 shadow-card"
         >
-          <Search className="h-6 w-6 shrink-0 text-ink-soft" strokeWidth={1.6} />
+          <Search className="h-[18px] w-[18px] shrink-0 text-ink-soft" strokeWidth={1.6} />
           <input
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             placeholder="e.g. Which programs post settlement entries to the ledger?"
             aria-label="Ask a question"
-            className="min-w-0 flex-1 bg-transparent py-4 text-[21px] text-ink outline-none placeholder:text-ink-soft"
+            className="min-w-0 flex-1 bg-transparent py-2 text-[14px] text-ink outline-none placeholder:text-muted-foreground"
           />
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center gap-2 rounded-md bg-ask px-10 py-4 text-[20px] font-semibold text-ask-foreground transition-colors hover:bg-ask-hover disabled:opacity-80"
+            className="inline-flex items-center gap-2 rounded-md bg-ask px-5 py-2.5 text-[13px] font-semibold text-ask-foreground transition-colors hover:bg-ask-hover disabled:opacity-80"
           >
-            Ask <ArrowRight className="h-5 w-5" strokeWidth={2} />
+            Ask <ArrowRight className="h-4 w-4" strokeWidth={2} />
           </button>
         </form>
 
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <span className="text-[18px] text-ink-soft">Try:</span>
+        <div className="mt-3 flex flex-wrap items-center gap-2">
+          <span className="text-[13px] text-ink-soft">Try:</span>
           {SUGGESTIONS.map((s) => (
             <button
               key={s}
@@ -124,30 +125,30 @@ function Index() {
                 setQuestion(s);
                 ask(s);
               }}
-              className="rounded-full border border-border bg-card px-11 py-3 text-[18px] text-ink transition-colors hover:bg-accent"
+              className="rounded-full border border-border bg-secondary px-4 py-1.5 text-[12px] text-ink transition-colors hover:bg-accent"
             >
               {s}
             </button>
           ))}
         </div>
 
-        <hr className="mt-16 border-t border-border" />
+        <hr className="mt-10 border-t border-border" />
 
         {!answer && !loading && (
-          <p className="mt-16 text-center text-[28px] text-ink-soft/80">
+          <p className="mt-8 text-center text-[14px] text-ink-soft">
             - Responses and Other panels that are shown in response to the question are appearing below this -
           </p>
         )}
 
         {loading && (
-          <div className="mt-10 flex items-center gap-3 text-[18px] text-ink-soft animate-rise-in">
-            <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-ask" />
+          <div className="mt-6 flex items-center gap-2 text-[14px] text-ink-soft animate-rise-in">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-ask" />
             Analysing the six programs…
           </div>
         )}
 
         {answer && (
-          <div className={cn("mt-10 grid grid-cols-1 items-start gap-6", GRID_COLS[panelCount])}>
+          <div className={cn("mt-6 grid grid-cols-1 items-start gap-4", GRID_COLS[panelCount])}>
             <SummaryPanel
               answer={answer}
               detailOpen={detailOpen}
